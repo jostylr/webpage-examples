@@ -146,4 +146,21 @@ The common css for all pages
         border-radius: 5px 5px 0 0;
     }
 
-
+    /* Form
+    ==================================== */
+    .form ul {
+        background: white;
+        margin-bottom: 1em;
+    }
+    .form li {
+        border: 1px solid #ccc;
+        border-bottom: 0;
+        margin-bottom: 0px;
+        position: relative;
+    }
+    .form li:first-child {
+        border-top: 0;
+    }
+    .form li:last-child {
+        border-bottom: 1px solid #ccc;
+    }
