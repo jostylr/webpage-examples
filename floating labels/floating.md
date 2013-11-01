@@ -13,7 +13,7 @@ The files for this
 * [submit.html](#fancy-submit-button "save: *basic html") making submit button fancy
 * [fscripted.html](#first-scripted "save: *basic html") a first script 
 * [listener.html](#listeners "save: *basic html") event listeners
-* [../ghpages/floatinglabel.htm](#listeners "save: *basic html") the live ghpage part
+* [../ghpages/floatinglabel.html](#listeners "save: *basic html") the live ghpage part
 
 ## basic form
 
