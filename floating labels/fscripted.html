@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact Me</title>
+    <!-- Viewport tag to make things responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link to the stylesheet we will create -->
+    <link rel="stylesheet" href="common.css">
+    <style type="text/css">label, input, textarea {
+            display: block;
+            border: 0;
+        }
+        input, textarea {
+            width: 100%;
+            height: 100%;
+            padding: 2.25em 1em 1em;
+            outline: 0;
+        }
+        textarea {
+            height: 16em;
+            resize: none;
+        }
+        
+        label {
+            font-size: .8125em; /* 13/16 */
+            position: absolute;
+            top: 1.23em;
+            left: 1.23em;
+            color: #f1773b;
+            opacity: 1;
+        }
+        
+        input[type="submit"] {
+            background: #f1773b;
+            margin-bottom: 1em;
+            color: white;
+            border-radius: 3px;
+            padding: .75em;
+            -webkit-appearance: none; /* remove default browser <button> styling */
+            -webkit-transition: .333s ease -webkit-transform;
+            transition: .333s ease transform;
+        }
+        input[type="submit"]:hover {
+            -webkit-transform: scale(1.025);
+            transform: scale(1.025);
+            cursor: pointer;
+        }
+        input[type="submit"]:active {
+            -webkit-transform: scale(.975);
+            transform: scale(.975);
+        }
+        
+        .js-hide-label label {
+            opacity: 0;
+            top: 1.5em
+        }
+        
+        label {
+            -webkit-transition: .333s ease top, .333s ease opacity;
+            transition: .333s ease top, .333s ease opacity;
+        }
+        
+        .js-unhighlight-label label {
+            color: #999
+        }</style>
+</head>
+<body>
+    <section class="container">
+        <h1 class="title">Contact Me</h1>
+        <form id="form" class="form" action="#" method="get">
+            <ul>
+                <li>
+                    <label for="name">Your Name:</label>
+                    <input type="text" placeholder="Your Name" id="name" name="name" tabindex="1"/>
+                </li>
+                <li>
+                    <label for="email">Your Email:</label>
+                    <input type="email" placeholder="Your Email" id="email" name="email" tabindex="2"/>
+                </li>
+                <li>
+                    <label for="message">Message:</label>
+                    <textarea placeholder="Message…" id="message" name="message" tabindex="3"></textarea>
+                </li>
+            </ul>
+            <input type="submit" value="Send Message" id="submit"/>
+        </form>
+    </section>
+
+    <script type="text/javascript">    document.addEventListener("DOMContentLoaded", function () {
+        var fli = Array.prototype.slice.call(document.querySelectorAll("form li"));
+        console.log(fli);
+        fli.forEach(function (el) {
+            el.classList.add("js-hide-label");
+        });});</script>
+    
+
+</body>
+</html>

@@ -8,6 +8,12 @@ The files for this
 
 * [basicform.html](#basic-form "save: *basic html") The basic form
 * [common.css](#common "save:") The common css for all
+* [blocklabel.html](#block-label "save: *basic html") Making the elements into blocks.
+* [thirdlabel.html](#a-thirdish-label "save: *basic html") moving the labels to be a third.
+* [submit.html](#fancy-submit-button "save: *basic html") making submit button fancy
+* [fscripted.html](#first-scripted "save: *basic html") a first script 
+* [listener.html](#listeners "save: *basic html") event listeners
+* [../ghpages/floatinglabel.htm](#listeners "save: *basic html") the live ghpage part
 
 ## basic form
 
@@ -35,7 +41,9 @@ Thus, this will be a template and we will insert css, form markup, and local scr
     <body>
         _"form markup"
 
-        _"*:scripts? "
+        <script type="text/javascript">    document.addEventListener("DOMContentLoaded", function () {
+        _"*:scripts? "});</script>
+        
 
     </body>
     </html>
@@ -65,6 +73,158 @@ This is standard across all the pages. The differences are in the css and javasc
             <input type="submit" value="Send Message" id="submit"/>
         </form>
     </section>
+
+
+
+## Block label
+
+The first interesting tidbit is making block forms
+
+[styles]()
+
+    label, input, textarea {
+        display: block;
+        border: 0;
+    }
+    input, textarea {
+        width: 100%;
+        height: 100%;
+        padding: 2.25em 1em 1em;
+        outline: 0;
+    }
+    textarea {
+        height: 16em;
+        resize: none;
+    }
+
+## A thirdish label
+
+Now we postion the labels one-third from the top
+
+[styles]() 
+
+    _"block label:styles"
+
+    label {
+        font-size: .8125em; /* 13/16 */
+        position: absolute;
+        top: 1.23em;
+        left: 1.23em;
+        color: #f1773b;
+        opacity: 1;
+    }
+
+## Fancy submit button
+
+[styles]() 
+
+    _"a thirdish label"
+
+    input[type="submit"] {
+        background: #f1773b;
+        margin-bottom: 1em;
+        color: white;
+        border-radius: 3px;
+        padding: .75em;
+        -webkit-appearance: none; /* remove default browser <button> styling */
+        -webkit-transition: .333s ease -webkit-transform;
+        transition: .333s ease transform;
+    }
+    input[type="submit"]:hover {
+        -webkit-transform: scale(1.025);
+        transform: scale(1.025);
+        cursor: pointer;
+    }
+    input[type="submit"]:active {
+        -webkit-transform: scale(.975);
+        transform: scale(.975);
+    }
+
+## first scripted
+
+Going with modern only.
+
+Errors while doing this: wrote .li instead of li,  forgot the .calll part of slicing it. 
+
+[styles]()
+
+    _"fancy submit button:styles"
+
+    .js-hide-label label {
+        opacity: 0;
+        top: 1.5em
+    }
+
+    label {
+        -webkit-transition: .333s ease top, .333s ease opacity;
+        transition: .333s ease top, .333s ease opacity;
+    }
+
+    .js-unhighlight-label label {
+        color: #999
+    }
+
+
+
+
+[scripts]()
+
+
+        var fli = Array.prototype.slice.call(document.querySelectorAll("form li"));
+        console.log(fli);
+        fli.forEach(function (el) {
+            el.classList.add("js-hide-label");
+        });
+
+
+
+## listeners
+
+Now we listen for events. 
+
+[styles]()
+
+    _"first scripted:styles"
+
+[scripts]() 
+
+    _"first scripted:scripts"
+
+    var inputs = Array.prototype.slice.call(document.querySelector('.form').querySelectorAll('input, textarea'));
+
+    inputs.forEach(function (el) {
+        el.addEventListener('blur', function (e) {
+            var el = this,
+                parent = this.parentElement;
+            if (this.value === '') {
+                parent.classList.add('js-hide-label');
+            } else {
+                parent.classList.remove('js-hide-label');
+                parent.classList.add('js-unhighlight-label');
+            }
+        });
+        el.addEventListener('keyup', function (e) {
+            var el = this,
+                parent = this.parentElement;
+            if (this.value === '') {
+                parent.classList.add('js-hide-label');
+            } else {
+                parent.classList.remove('js-hide-label');
+            }
+        });
+        el.addEventListener('focus', function (e) {
+            var el = this,
+                parent = this.parentElement;
+            if (this.value !== '') {
+                parent.classList.remove('js-unhighlight-label');
+            }
+        });
+
+    });
+
+    document.querySelector('#submit').addEventListener('click', function (e) {
+        e.preventDefault();
+    });
 
 ## Common
 
