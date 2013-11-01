@@ -13,7 +13,7 @@ The files for this
 * [submit.html](#fancy-submit-button "save: *basic html") making submit button fancy
 * [fscripted.html](#first-scripted "save: *basic html") a first script 
 * [listener.html](#listeners "save: *basic html") event listeners
-* [../ghpages/floatinglabel.html](#listeners "save: *basic html") the live ghpage part
+* [../ghpages/floatinglabel.html](#final "save: *basic html") the live ghpage part
 
 ## basic form
 
@@ -225,6 +225,20 @@ Now we listen for events.
     document.querySelector('#submit').addEventListener('click', function (e) {
         e.preventDefault();
     });
+
+## final
+
+This is the final page. It will have the full CSS in it as well. Why not?
+
+[styles]()
+
+    _"common"
+
+    _"listeners:styles"
+
+[scripts]()
+
+    _"listeners:scripts"
 
 ## Common
 
