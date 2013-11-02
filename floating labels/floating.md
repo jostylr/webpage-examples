@@ -242,7 +242,7 @@ This is the final page. It will have the full CSS in it as well. Why not?
 
 ## Common
 
-The common css for all pages
+The common css for all pages.
 
     /* http://meyerweb.com/eric/tools/css/reset/ 
        v2.0 | 20110126
