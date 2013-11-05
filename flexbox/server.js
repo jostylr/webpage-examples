@@ -107,7 +107,7 @@ http.createServer(function (req, res) {
         var txtfile = parsed.pathname.slice(1);
         var ext = pathway[pathway.length-1];
 
-    if (ext.match("html")) {
+    if (false && ext.match("html")) {
         readDir(txtfile, ext, res);
     } else {
         serveFile(txtfile, ext, res);

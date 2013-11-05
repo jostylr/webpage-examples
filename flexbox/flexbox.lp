@@ -3,10 +3,23 @@
 
 Exploring flexbox. 
 
+The jsbin for this:  http://jsbin.com/AsuXeFA/1/edit?html,css,output
+
 
 ## Files
 
+* [index.html](#index "save: | marked") the index
 * [common.html](#basic-html "save:") The initial draft
+* [horizontalcenter.html](#horiz "save: *basic html") Horizontal Center
+
+
+## index
+
+    * [the index](index.html) 
+    * [The initial draft](common.html) 
+    * [Horizontal Center](horizontalcenter.html) 
+
+
 
 ## Basic HTML
 
@@ -35,8 +48,8 @@ So html doctype header, htl tag, meta stuff.
             background: rgba(200, 200, 200, .6); }
             footer{
             background: rgba(200, 200, 200, .4); }
-
-        _"*:styles? "</style>
+            _"*:styles? "
+        </style>
     </head>
     <body>
         <div class="flex"> <header>
@@ -46,5 +59,18 @@ So html doctype header, htl tag, meta stuff.
         <footer> </footer>
         </div>
 
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </body>
     </html>
+
+# horiz
+
+[styles]()
+
+    .flex{
+        background: yellow;
+        flex-flow: row;
+        align-items: center; /* This centers the items vertically. */ 
+        justify-content: center; /* This centers everything horizontally....
+    }
+
