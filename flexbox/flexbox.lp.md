@@ -68,8 +68,8 @@ So html doctype header, htl tag, meta stuff.
 [styles]()
 
     .flex{
-        background: yellow;
-        flex-flow: row;
+        background: darkGreen;
+        flex-flow: column;
         align-items: center; /* This centers the items vertically. */ 
         justify-content: center; /* This centers everything horizontally....
     }
